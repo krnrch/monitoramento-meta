@@ -27,12 +27,15 @@ h1 {
 
 .campo {
   margin-bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 label {
-  display: block;
-  margin-bottom: 10px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 input {
