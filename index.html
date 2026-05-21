@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoramento de Meta</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Monitoramento de Meta</h1>
+
+    <div class="campo">
+      <label>Meta Mensal</label>
+
+      <input
+        type="number"
+        id="metaMensal"
+        placeholder="Digite a meta mensal"
+      >
+    </div>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Semana</th>
+          <th>Meta</th>
+          <th>Vendido</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Semana 1</td>
+          <td id="meta1">R$ 0</td>
+          <td>
+            <input type="number" class="vendido" data-semana="1">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Semana 2</td>
+          <td id="meta2">R$ 0</td>
+          <td>
+            <input type="number" class="vendido" data-semana="2">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Semana 3</td>
+          <td id="meta3">R$ 0</td>
+          <td>
+            <input type="number" class="vendido" data-semana="3">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Semana 4</td>
+          <td id="meta4">R$ 0</td>
+          <td>
+            <input type="number" class="vendido" data-semana="4">
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="resultado" id="resultado">
+      Aguardando informações...
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
