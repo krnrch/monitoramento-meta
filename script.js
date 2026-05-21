@@ -122,18 +122,31 @@ function atualizarTabela(restante) {
   });
 
 
+  // META NÃO ALCANÇADA
   if (restante > 0) {
 
     resultado.innerHTML = `
-      Falta atingir:
-      <strong>${formatar(restante)}</strong>
+      Meta não alcançada faltando
+      <strong>-${formatar(restante)}</strong>.
     `;
 
-  } else {
+  }
+
+  // META ULTRAPASSADA
+  else if (restante < 0) {
 
     resultado.innerHTML = `
-      Meta atingida!
-      <strong>${formatar(Math.abs(restante))}</strong>
+      Meta atingida com sobra de
+      <strong>+${formatar(Math.abs(restante))}</strong>.
+    `;
+
+  }
+
+  // META EXATA
+  else {
+
+    resultado.innerHTML = `
+      <strong>Meta atingida exatamente!</strong>
     `;
   }
 }
