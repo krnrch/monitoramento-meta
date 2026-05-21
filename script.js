@@ -99,16 +99,23 @@ if (!metaMensal) {
 
   let semanasRestantes = [];
 
+  let todosPreenchidos = true;
+
   vendidosInputs.forEach((input, index) => {
 
-    const valor = Number(input.value) || 0;
+  // VERIFICA SE O CAMPO ESTÁ VAZIO
+  if (input.value === '') {
+    todosPreenchidos = false;
+  }
 
-    totalVendido += valor;
+  const valor = Number(input.value) || 0;
 
-    if (valor === 0) {
-      semanasRestantes.push(index);
-    }
-  });
+  totalVendido += valor;
+
+  if (valor === 0) {
+    semanasRestantes.push(index);
+  }
+});
 
   const restante = metaMensal - totalVendido;
 
@@ -134,7 +141,27 @@ if (!metaMensal) {
   });
 
 
+  if (todosPreenchidos) {
+
   atualizarTabela(restante);
+
+} else {
+
+  resultado.innerHTML = `
+    Aguardando informações...
+  `;
+
+  atualizarTabelaParcial();
+}
+  function atualizarTabelaParcial() {
+
+  metasSemanais.forEach((meta, index) => {
+
+    document.getElementById(
+      `meta${index + 1}`
+    ).innerText = formatar(meta);
+  });
+}
 
   salvarDados();
 }
