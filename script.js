@@ -64,7 +64,36 @@ function calcularMetas() {
 
   const metaMensal = Number(metaMensalInput.value);
 
-  if (!metaMensal) return;
+
+// SE NÃO HOUVER META
+if (!metaMensal) {
+
+  resultado.innerHTML = `
+    Aguardando informações...
+  `;
+
+  // ZERA METAS
+  metasSemanais = [0,0,0,0];
+
+  metasSemanais.forEach((meta, index) => {
+
+    document.getElementById(
+      `meta${index + 1}`
+    ).innerText = formatar(meta);
+  });
+
+
+  // LIMPA INPUTS DE VENDIDO
+  vendidosInputs.forEach(input => {
+    input.value = '';
+  });
+
+
+  // LIMPA LOCALSTORAGE
+  localStorage.removeItem('monitoramentoMeta');
+
+  return;
+}
 
   let totalVendido = 0;
 
