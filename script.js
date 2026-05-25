@@ -202,7 +202,7 @@ function atualizarTabela(restante) {
   else {
 
     resultado.innerHTML = `
-      <strong>Meta atingida exatamente!</strong>
+      <strong>Meta atingida!</strong>
     `;
   }
 }
